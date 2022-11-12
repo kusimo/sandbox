@@ -1,0 +1,46 @@
+.faq-wrapper input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+.faq-wrapper label {
+    position: relative;
+    display: block;
+    padding: 20px;
+    margin-bottom: 5px;
+    line-height: normal;
+    cursor: pointer;
+    border-top: 1px solid #ececec;
+    color: #000000;
+}
+
+.accordion__title span,
+.faq-content p {
+    margin-left: 32px;
+}
+
+.faq-wrapper label::before {
+    position: absolute;
+    content: "+";
+    color: #F6AE2D;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 28px;
+    transition: all .5s;
+    padding: 0 5px;
+}
+
+.faq-wrapper input:checked~label::before {
+    content: "-";
+}
+
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .35s;
+}
+
+.faq-wrapper input:checked~.faq-content {
+    max-height: none;
+}

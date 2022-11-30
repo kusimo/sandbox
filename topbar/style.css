@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+  * {
+    outline: none;
+    box-sizing: border-box;
+    }
+
+    html {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    }
+    body {
+        width: 100%;
+        height: 100vh;
+        margin:0;
+    }
+    /* Topbar CSS */
+    :root {
+        --top-bar-page-width: 1200px;
+        --top-bar-bg-color: #153D5C;
+        --body-font: 'Poppins', sans-serif;
+    }
+    #top-bar-v1 {
+        z-index: 1;
+        background: var(--top-bar-bg-color);
+        font-family: var(--body-font);
+    }
+    #top-bar-v1 .top-bar--container  {
+        padding: 7px 30px; 
+    }
+    #top-bar-v1 .top-bar--wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        align-items: center;
+        max-width: var(--top-bar-page-width);
+    }
+    [class^="top-bar--wrapper__content-"].show-on-small-screen {
+        width:100%;
+    }
+    #top-bar-v1 ul.top-bar-menu {
+        display: flex;
+        justify-content: center;
+        margin:0;
+        padding:0;
+        gap: 32px;
+        list-style: none;
+    }
+    ul.top-bar-menu li {
+        align-self: center;
+    }
+    ul.top-bar-menu li:not(.show-on-small-screen__item) {
+        display: none;
+    }
+    ul.top-bar-menu li>a {
+        text-decoration: none;
+        color: white;
+        font-weight: 700;
+    }
+    li.top-bar-has-icon a {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+    }
+    li.top-bar-has-icon a>svg {
+        width: 22px;
+        height: 22px;
+        fill: currentColor;
+    }
+
+    @media screen and (min-width: 990px) {
+        #top-bar-v1 .top-bar--wrapper{
+            padding: 0 5rem;
+        }
+        ul.top-bar-menu li:not(.show-on-small-screen__item) {
+            display: block;
+        } 
+        [class^="top-bar--wrapper__content-"] {
+            width: 100%;
+        }
+        #top-bar-v1 ul.top-bar-menu.is-position-left {
+            justify-content: left;
+        }
+        #top-bar-v1 ul.top-bar-menu.is-position-right {
+            justify-content: right;
+        }
+       
+    }
